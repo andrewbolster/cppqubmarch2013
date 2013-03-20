@@ -1,7 +1,7 @@
 #ifndef MATHS_H
 #define MATHS_H
 
-#define PI 3.14
+#define PI 3.14159
 
 namespace math {
 	//function declarations - prototypes

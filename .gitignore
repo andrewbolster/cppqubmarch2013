@@ -11,3 +11,9 @@
 *.lai
 *.la
 *.a
+
+# Compiled Executables
+*.exe
+
+# Vim Swps
+*.swp

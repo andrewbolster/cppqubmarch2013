@@ -19,6 +19,7 @@ public:
     Point& operator=(int * values);
     bool operator==(const Point& rhs);
     Point operator+(const Point& rhs);
+    double operator*(const Point& rhs);
 };
 
 Point& Point::operator=(const Point& rhs) {
@@ -40,9 +41,13 @@ Point Point::operator+(const Point& rhs) {
     Point sum(x + rhs.x, y + rhs.y);
     return sum;
 }
+double Point::operator*(const Point& rhs) {
+    double sum((x * rhs.y) + (y * rhs.x));
+    return sum;
+}
 
 ostream& operator<<(ostream& s,const Point& p) {
-    return s << "x coordinate is " << p.x << " and y coordinate is " << p.y << endl;
+    return s << "(" << p.x << "," << p.y << ")";
 }
 
 int main() {
@@ -63,6 +68,9 @@ int main() {
 
     //test operator==
     if(tst1 == tst2) cout <<"points match" <<endl;
+
+    //test operator*
+    cout << "The Dot product of "<<tst2<<" and "<<tst3<<" is "<<tst2*tst3;
 
     return 0;
 }

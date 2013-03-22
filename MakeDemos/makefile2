@@ -1,0 +1,20 @@
+object_files = main.o maths.o
+
+demo : $(object_files)
+	@echo 'building executable'
+	g++ $(object_files) -o $@
+
+main.o : main.cpp maths.h
+maths.o : maths.cpp maths.h
+
+%.o : %.cpp
+	@echo building object $@
+	g++ -c $^
+
+.PHONY : clean
+	
+clean :
+	rm *.o
+	rm demo
+	rm *.gch
+

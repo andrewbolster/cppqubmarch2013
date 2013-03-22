@@ -1,0 +1,20 @@
+
+//Install packages from the command line
+//NB: 'google-mock' bundles 'google-test' 
+sudo apt-get install ksh
+sudo apt-get install build-essential
+sudo apt-get install libgtest0 libgtest-dev
+sudo apt-get install google-mock
+
+
+//Compile code using Google Test and/or Google Mock
+//NB: pthreads only required on latest version of Ubuntu
+g++ -lgtest_main -lpthread -o demo main.cpp
+g++ -lgtest_main -lgmock -lpthread -o demo main.cpp
+
+//Compile code using justthreads
+//NB '-std' option needed to enable C++0x features
+g++ -std=c++0x -I/usr/include/justthread -pthread -ljustthread -o demo main.cpp
+
+
+

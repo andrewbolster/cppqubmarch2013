@@ -1,0 +1,18 @@
+demo : main.o maths.o
+	@g++ main.o maths.o -o demo
+	
+main.o : main.cpp maths.h
+	@g++ -c main.cpp
+	
+maths.o : maths.cpp maths.h
+	@g++ -c maths.cpp
+	
+clean :
+	rm *.o
+	rm demo
+	
+
+	
+	
+
+	
